@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+}
+
+.page-container .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-container .intro p,
+.page-container .card-section .card p {
+    color: var(--grayish-blue);
+}
+
+.page-container .intro h1,
+.page-container .intro h2,
+.page-container .card-section .card h3 {
+    color: var(--very-dark-blue);
+}
+
+.page-container .intro h1 {
+    font-size: 33px;
+    font-weight: 200;
+}
+
+.page-container .intro h2 {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.page-container .intro p {
+    margin-top: 10px;
+    width: 60%;
+}
+
+.page-container .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.page-container .card-section .main-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.page-container .card-section .card {
+    max-width: 300px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 12px 17px -5px hsl(221.36deg 49% 36.16% / 43%);
+    transition: transform .4s ease, box-shadow .2s ease;
+    cursor: pointer;
+}
+
+.page-container .card-section .card.team-builder {
+    border-top: 5px solid var(--red);
+}
+
+.page-container .card-section .card.supervisor {
+    border-top: 5px solid var(--cyan);
+}
+
+.page-container .card-section .card.karma {
+    border-top: 5px solid var(--orange);
+}
+
+.page-container .card-section .card.calculator {
+    border-top: 5px solid var(--blue);
+}
+
+.page-container .card-section .card p {
+    margin: 10px 0 40px 0;
+}
+
+.page-container .card-section .card img {
+    display: block;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .page-container {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .page-container .intro p {
+        width: 100%;
+        font-size: 21px;
+    }
+
+    .page-container .card-section .card {
+        max-width: 375px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1140px) {
+    .page-container .intro p {
+        width: 70%;
+    }
+
+    .page-container .card-section .card.supervisor {
+        order: 1;
+    }
+
+    .page-container .card-section .main-card-container {
+        order: 0;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .page-container .card-section .card:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 7px 10px -5px hsl(221.36deg 49% 36.16% / 43%);
+    }
+
+    .page-container .card-section .card.supervisor {
+        order: unset;
+    }
+
+    .page-container .card-section .main-card-container {
+        order: unset;
+        flex-direction: column;
+    }
+}
